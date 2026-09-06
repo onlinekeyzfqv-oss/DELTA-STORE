@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f0a900">
+  <title>DELTA.KEYS — Instant Digital Keys</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="/">DELTA<span>.KEYS</span></a>
+  <nav>
+    <a href="#products">Products</a>
+    <a href="#how">How it works</a>
+    <a href="#faq">FAQ</a>
+    <a class="admin-link" href="/admin.html">ADMIN</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero shell">
+    <div class="hero-copy">
+      <div class="eyebrow">⚡ INSTANT DIGITAL DELIVERY</div>
+      <h1>Get your key.<br><span>Activate. Play.</span></h1>
+      <p>Fast, simple and secure digital access from DELTA.KEYS. Choose a plan, complete checkout and receive your key instantly.</p>
+      <div class="hero-actions">
+        <a class="btn btn-gold" href="#products">Browse keys</a>
+        <a class="btn btn-ghost" href="#how">How it works</a>
+      </div>
+      <div class="trust-row">
+        <span>✓ Instant delivery</span><span>✓ Secure checkout</span><span>✓ Support</span>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="orb"></div>
+      <div class="hero-card-inner">
+        <span class="mini-label">DELTA ACCESS</span>
+        <strong>YOUR KEY</strong>
+        <code>XXXX-XXXX-XXXX</code>
+        <div class="key-status"><i></i> Ready to deliver</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="products" class="shell section">
+    <div class="section-head">
+      <div><div class="eyebrow">STORE</div><h2>Choose your access</h2></div>
+      <div id="storeStatus" class="muted">Loading inventory…</div>
+    </div>
+    <div id="productsGrid" class="product-grid"></div>
+  </section>
+
+  <section id="how" class="shell section">
+    <div class="eyebrow">SIMPLE PROCESS</div><h2>How it works</h2>
+    <div class="steps">
+      <div class="step"><b>01</b><h3>Select a plan</h3><p>Choose the product and validity that fits you.</p></div>
+      <div class="step"><b>02</b><h3>Checkout</h3><p>Enter your email and confirm your order.</p></div>
+      <div class="step"><b>03</b><h3>Receive your key</h3><p>Once payment is confirmed, your key appears instantly.</p></div>
+    </div>
+  </section>
+
+  <section id="faq" class="shell section">
+    <div class="eyebrow">HELP</div><h2>Frequently asked</h2>
+    <div class="faq">
+      <details><summary>When do I receive my key?</summary><p>After successful payment, the order page displays the purchased key immediately.</p></details>
+      <details><summary>Can I buy multiple keys?</summary><p>Yes. The checkout supports quantities, subject to available inventory.</p></details>
+      <details><summary>Where can I check an order?</summary><p>Use the order ID shown after checkout or in your confirmation screen.</p></details>
+    </div>
+  </section>
+</main>
+
+<footer><div class="shell footer-inner"><strong>DELTA.KEYS</strong><span>Digital access, delivered fast.</span><a href="/admin.html">Admin</a></div></footer>
+
+<div id="modal" class="modal hidden">
+  <div class="modal-backdrop" onclick="closeModal()"></div>
+  <div class="modal-card">
+    <button class="close" onclick="closeModal()">×</button>
+    <div id="modalBody"></div>
+  </div>
+</div>
+<script src="/app.js"></script>
+</body>
+</html>

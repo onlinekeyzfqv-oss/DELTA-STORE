@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DELTA.KEYS — Admin</title><link rel="stylesheet" href="/admin.css">
+</head>
+<body>
+<div id="loginView" class="login-wrap">
+  <div class="login-card">
+    <div class="brand">DELTA<span>.KEYS</span></div>
+    <div class="eyebrow">ADMIN PANEL</div><h1>Welcome back</h1><p>Manage products, plans and key inventory.</p>
+    <input id="loginUser" placeholder="Username" autocomplete="username">
+    <input id="loginPass" placeholder="Password" type="password" autocomplete="current-password">
+    <button onclick="login()">Sign in</button><div id="loginMsg"></div>
+  </div>
+</div>
+<div id="appView" class="hidden">
+  <header class="admin-top"><button class="hamb" onclick="document.body.classList.toggle('menu-open')">☰</button><strong>Product Keys</strong><div class="admin-pill">♙ ADMIN</div></header>
+  <aside class="sidebar">
+    <div class="side-brand">DELTA<span>.KEYS</span></div>
+    <button onclick="showTab('keys')">🔑 Product Keys</button>
+    <button onclick="showTab('products')">▣ Products & Plans</button>
+    <button onclick="showTab('orders')">▤ Orders</button>
+    <a href="/">↗ View Store</a>
+    <button class="logout" onclick="logout()">⇥ Logout</button>
+  </aside>
+  <main class="admin-main">
+    <section id="tab-keys">
+      <div class="card select-card"><label>SELECT PRODUCT</label><select id="keyProduct" onchange="syncPlans()"></select></div>
+      <div class="card">
+        <h2>⇧ Upload Keys</h2>
+        <label>PRODUCT</label><input id="keyProductName" disabled>
+        <label>PLAN</label><select id="keyPlan"></select>
+        <label>PASTE KEYS <span>(one per line)</span></label>
+        <textarea id="keyText" placeholder="XXXX-YYYY-ZZZZ&#10;AAAA-BBBB-CCCC&#10;..."></textarea>
+        <button class="gold-btn" onclick="uploadKeys()">☁ Upload Keys</button>
+        <div id="keyMsg"></div>
+      </div>
+      <div class="card"><h2>Stock</h2><div id="stockTable"></div></div>
+    </section>
+    <section id="tab-products" class="hidden">
+      <div class="card"><h2>Products</h2><div id="productList"></div>
+      <div class="inline-form"><input id="newProductName" placeholder="New product name"><input id="newProductDesc" placeholder="Description"><button onclick="addProduct()">Add product</button></div></div>
+      <div class="card"><h2>Plans</h2><div id="planList"></div>
+      <div class="inline-form"><select id="planProduct"></select><input id="newPlanName" placeholder="Plan name"><input id="newPlanPrice" type="number" placeholder="Price"><button onclick="addPlan()">Add plan</button></div></div>
+    </section>
+    <section id="tab-orders" class="hidden"><div class="card"><h2>Orders</h2><div id="ordersTable"></div></div></section>
+  </main>
+</div>
+<script src="/admin.js"></script>
+</body>
+</html>
